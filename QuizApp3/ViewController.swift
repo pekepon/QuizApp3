@@ -35,10 +35,9 @@ class ViewController: UIViewController {
     }
 
     @IBAction func ansewr1Action(sender: UIButton) {
-        //if  timer!.valid == true {
-            //return;
-        //} else
-    if countNumber == 1 {
+        if  timer.valid == true {
+            return;
+        } else if countNumber == 1 {
             textLabel1.text = "不 正 解"
             textLabel2.text = "3秒後に次の問題です。"
             countNumber++
