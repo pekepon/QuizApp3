@@ -12,6 +12,10 @@
 		825B6E411C7072C800703C5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 825B6E3F1C7072C800703C5D /* Main.storyboard */; };
 		825B6E431C7072C800703C5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 825B6E421C7072C800703C5D /* Assets.xcassets */; };
 		825B6E461C7072C800703C5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 825B6E441C7072C800703C5D /* LaunchScreen.storyboard */; };
+		825B6E761C70789600703C5D /* batsu.png in Resources */ = {isa = PBXBuildFile; fileRef = 825B6E721C70789600703C5D /* batsu.png */; };
+		825B6E771C70789600703C5D /* batu.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 825B6E731C70789600703C5D /* batu.mp3 */; };
+		825B6E781C70789600703C5D /* maru.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 825B6E741C70789600703C5D /* maru.mp3 */; };
+		825B6E791C70789600703C5D /* maru.png in Resources */ = {isa = PBXBuildFile; fileRef = 825B6E751C70789600703C5D /* maru.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		825B6E421C7072C800703C5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		825B6E451C7072C800703C5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		825B6E471C7072C800703C5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		825B6E721C70789600703C5D /* batsu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = batsu.png; sourceTree = "<group>"; };
+		825B6E731C70789600703C5D /* batu.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = batu.mp3; sourceTree = "<group>"; };
+		825B6E741C70789600703C5D /* maru.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = maru.mp3; sourceTree = "<group>"; };
+		825B6E751C70789600703C5D /* maru.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maru.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +68,20 @@
 				825B6E421C7072C800703C5D /* Assets.xcassets */,
 				825B6E441C7072C800703C5D /* LaunchScreen.storyboard */,
 				825B6E471C7072C800703C5D /* Info.plist */,
+				825B6E4F1C70785700703C5D /* Resources */,
 			);
 			path = QuizApp3;
+			sourceTree = "<group>";
+		};
+		825B6E4F1C70785700703C5D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				825B6E721C70789600703C5D /* batsu.png */,
+				825B6E731C70789600703C5D /* batu.mp3 */,
+				825B6E741C70789600703C5D /* maru.mp3 */,
+				825B6E751C70789600703C5D /* maru.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,8 +143,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				825B6E461C7072C800703C5D /* LaunchScreen.storyboard in Resources */,
+				825B6E771C70789600703C5D /* batu.mp3 in Resources */,
 				825B6E431C7072C800703C5D /* Assets.xcassets in Resources */,
 				825B6E411C7072C800703C5D /* Main.storyboard in Resources */,
+				825B6E761C70789600703C5D /* batsu.png in Resources */,
+				825B6E781C70789600703C5D /* maru.mp3 in Resources */,
+				825B6E791C70789600703C5D /* maru.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +308,7 @@
 				825B6E4C1C7072C800703C5D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
