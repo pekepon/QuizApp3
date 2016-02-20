@@ -20,6 +20,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var answer1: UIButton!
     @IBOutlet weak var answer2: UIButton!
     
+    var audioPlayer1: AVAudioPlayer!
+    var audioPlayer2: AVAudioPlayer!
+    
     var timer: NSTimer?
     var countNumber = 1;
     var countAnswer = 0;
@@ -31,29 +34,43 @@ class ViewController: UIViewController {
         
         textLabel3.text = "第1問"
         textView.text = "\n\n 東京ディズニーランドがあるのは東京都である。\n\n\n ◯ or X"
+        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+        timer!.invalidate()
         
+        let audioPath1 = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("maru", ofType: "mp3")!)
+        audioPlayer1 = try! AVAudioPlayer(contentsOfURL: audioPath1, fileTypeHint: nil)
+        let audioPath2 = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("batu", ofType: "mp3")!)
+        audioPlayer2 = try! AVAudioPlayer(contentsOfURL: audioPath2, fileTypeHint: nil)
     }
 
     @IBAction func ansewr1Action(sender: UIButton) {
-        if  timer.valid == true {
+        if  timer!.valid == true {
             return;
         } else if countNumber == 1 {
+            audioPlayer2.prepareToPlay()
+            audioPlayer2.play()
             textLabel1.text = "不 正 解"
             textLabel2.text = "3秒後に次の問題です。"
             countNumber++
             timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
         } else if countNumber == 2 {
+            audioPlayer1.prepareToPlay()
+            audioPlayer1.play()
             textLabel1.text = "正 解"
             textLabel2.text = "3秒後に次の問題です。"
         countAnswer = countAnswer+20
             countNumber++
             timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
         } else if countNumber == 3 {
+            audioPlayer2.prepareToPlay()
+            audioPlayer2.play()
             textLabel1.text = "不 正 解"
             textLabel2.text = "3秒後に次の問題です。"
             countNumber++
             timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
         } else if countNumber == 4 {
+            audioPlayer1.prepareToPlay()
+            audioPlayer1.play()
             textLabel1.text = "正 解"
             textLabel2.text = "3秒後に次の問題です。"
             countAnswer = countAnswer+20
@@ -61,6 +78,8 @@ class ViewController: UIViewController {
             timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
         } else if countNumber == 5 {
             textLabel1.text = "不 正 解"
+            audioPlayer2.prepareToPlay()
+            audioPlayer2.play()
             textLabel2.text = "3秒後に次の問題です。"
             countNumber++
             textView.text = "あなたの正解率は \(countAnswer) %です。\n\n もう一度挑戦するには◯ \n 終了はXを押してください。"
@@ -69,12 +88,17 @@ class ViewController: UIViewController {
             countAnswer = 0
             textLabel3.text = "第1問"
             textView.text = "\n\n 東京ディズニーランドがあるのは東京都である。\n\n\n ◯ or X"
+            textLabel1.text = ""
         }
     }
 
     @IBAction func ansewr2Action(sender: UIButton) {
-        
-        if countNumber == 1 {
+        if  timer!.valid == true {
+            return;
+            
+        } else if countNumber == 1 {
+            audioPlayer1.prepareToPlay()
+            audioPlayer1.play()
             textLabel1.text = "正 解"
             textLabel2.text = "3秒後に次の問題です。"
             countAnswer = countAnswer+20
@@ -82,22 +106,30 @@ class ViewController: UIViewController {
         } else if (countNumber == 2){
             
             textLabel1.text = "不 正 解"
+            audioPlayer2.prepareToPlay()
+            audioPlayer2.play()
             textLabel2.text = "3秒後に次の問題です。"
             countNumber++
             timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
         } else if (countNumber == 3){
             textLabel1.text = "正 解"
+            audioPlayer1.prepareToPlay()
+            audioPlayer1.play()
             textLabel2.text = "3秒後に次の問題です。"
             countAnswer = countAnswer+20
             countNumber++
             timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
         } else if (countNumber == 4){
             textLabel1.text = "不 正 解"
+            audioPlayer2.prepareToPlay()
+            audioPlayer2.play()
             textLabel2.text = "3秒後に次の問題です。"
             countNumber++
             timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
         } else if (countNumber == 5){
             textLabel1.text = "正 解"
+            audioPlayer1.prepareToPlay()
+            audioPlayer1.play()
             textLabel2.text = ""
             countAnswer = countAnswer+20
             countNumber++
@@ -154,9 +186,6 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
-    
 
 }
 
